@@ -1,0 +1,10 @@
+<div class="row background-color">
+    <div class="col-sm-3">
+        <app-filter *ngIf="isAPICalled" [productComponent]="productComponentReference" [filters]="filters1" [filterValues]="allFiltersValue"
+            [secondFilteName]="secondFilteName"></app-filter>
+    </div>
+    <div class="col-sm-9">
+        <app-products #productComponentReference [hidden]="hideComponent" [products]="products">
+        </app-products>
+    </div>
+</div>

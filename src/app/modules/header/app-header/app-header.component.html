@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="header-bar container" [ngStyle]="styless.height">
+    <a class="header-bar__logo">
+      <!--<img src="./assets/icons/CISCO_logo_Homepage_SPADE.png">-->
+      <span class="icon-cisco"></span>
+    </a>
+    <div class="header-bar__main">
+      <div class="header-heading">
+        <!-- <h1   [ngStyle]="styless.title" class="page-title hover">{{headerData.headerHeading}} -->
+        <h1 [ngStyle]="styless.title" class="page-title hover">{{pName}}
+          <br>
+          <span [ngStyle]="styless.aboutHeader" style="font-size: 9pt;">
+            <!-- {{headerData.aboutHeader}} -->
+            {{pDesc}}
+          </span>
+        </h1>
+      </div>
+    </div>
+    <!-- <div *ngIf="user === 'LoggedOut'" class="header-toolbar">
+        <button class="btn btn--primary" (click)="doSwitch('LoggedIn')">
+          Login
+        </button>
+      </div>    -->
+  </div>
+  <div>
+    <span *ngFor="let nav of headerData.headerNavigation; index as i" [ngStyle]="{'margin-left':i === 0? '9%' : '5%' }">
+      <b>
+        <a [routerLink]=nav.url [ngClass]="{'active':underLineData[i]}" (click)="underLine(i)" [ngStyle]="styless.tab"> {{nav.name}} </a>
+      </b>
+    </span>
+  </div>
+
+</header>

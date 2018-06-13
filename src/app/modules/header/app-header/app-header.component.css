@@ -1,0 +1,10 @@
+
+ .active{
+    background: 0 0;
+    border-bottom: 3px solid #049fd9;
+    color: #049fd9!important;
+} 
+
+mat-card {
+    padding:0px;
+}

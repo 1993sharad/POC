@@ -1,0 +1,78 @@
+<div>
+  <div class="margin-left-right">
+    <div class="row margin-top-7">
+      <div class="col-sm-6 filter-heading">FILTER By</div>
+      <div class="col-sm-6 text-align-right">
+        <small class="clear-all">
+          <a (click)="clearAll()">Clear All</a>
+        </small>
+      </div>
+    </div>
+    <hr class="margin-top-0">
+    <!-- <div class="margin-top-10">
+    <div class="filter-heading">QUICK SEARCH</div>
+    <div class="margin-top">
+      <input class="col-sm-12 border-radius" type="search" placeholder="Type to search" #search [(ngModel)]="searchValue" (input)="onSearchChange($event.target.value)">
+    </div>
+    <hr class="margin-top-10">
+  </div> -->
+    <!-- <div class="row">
+    <div class="col-sm-10 ip-box">
+      <input type="text" placeholder="Search">
+    </div>
+    <div class="col-sm-2">
+      <a class="cir icon-search"> </a>
+    </div>
+  </div> -->
+
+    <mat-form-field class="example-form-field" style="width:100%">
+      <!-- <a class=" icon-search"> </a> -->
+      <input matInput type="text" placeholder="Search Here" #search [(ngModel)]="searchValue" (input)="onSearchChange($event.target.value)">
+      <button mat-button *ngIf="!searchValue" matPrefix mat-icon-button aria-label="Clear">
+        <!-- <mat-icon>close</mat-icon> -->
+        <a class=" icon-search"> </a>
+      </button>
+      <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="matSearchClearValue()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="margin-left-right">
+    <div *ngFor="let filter of filters; let i = index; let last = last">
+      <div class="row">
+        <div class="col-sm-6 filter-heading">{{filter.filterName}}</div>
+        <div class="col-sm-6 text-align-right">
+          <small class="clear-all">
+            <a (click)="clear(filter.filterName,i)">Clear</a>
+          </small>
+        </div>
+      </div>
+
+      <div class=" ">
+        <div class="" *ngFor="let filterValue of values[i];let j = index">
+          <div class="row">
+            <div class="col-sm-10">
+              <label class="checkbox">
+                <input type="checkbox" name="" [checked]="filterValue.isChecked" (click)="filterName(filter.filterName,filterValue.name,i)">
+                <span class="checkbox__input"></span>
+                <span class="checkbox__label">{{filterValue.name}}</span>
+              </label>
+            </div>
+            <div [hidden]="!secondLevelFilteName[i][j].length>0" class="col-sm-2" (click)="showFilterValue(filterValue.name,i)">
+              <span [ngClass]="{ 'icon-rotate-270':!filterValue.isHide,'icon-rotate-90':!filterValue.isHide}" class="icon-dropdown"></span>
+            </div>
+          </div>
+          <div [hidden]="!filterValue.isHide" class="margin-left-20" *ngFor="let value of secondLevelFilteName[i][j]">
+            <label class="checkbox">
+              <input type="checkbox" name="" [checked]="value.isChecked" (click)="filterNameSecondLevel(filter.filterName,value.name,i,j)">
+              <span class="checkbox__input"></span>
+              <span class="checkbox__label">{{value.name}}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <hr *ngIf="!last">
+    </div>
+  </div>
+</div>

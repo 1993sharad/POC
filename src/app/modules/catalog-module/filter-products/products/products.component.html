@@ -1,0 +1,23 @@
+ {{filtersName}}
+ 
+<div class="row max-width">
+    <mat-card [ngStyle]="{'margin-top':i<2 ? '2%' : '0px' }" class="col-sm-3 padding-left-right-0 max-width-30" *ngFor="let product of productArray; let i = index">
+
+        <div class="padding-top-0">
+            <div class="icon-more more-icon-size" (click)="more(product._id)"></div>
+            <div>
+                <img class="image-margin-left-38" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                    alt="rose image" height="50" width="80">
+            </div>
+
+        </div>
+        <div class="margin-left-8">
+            <b>{{product._source.ProductTitle}}</b>
+        </div>
+        <div class="margin-left-8 margin-top-5">
+            {{product._source.ProductDesc}}
+        </div>
+
+    </mat-card>
+
+</div>
