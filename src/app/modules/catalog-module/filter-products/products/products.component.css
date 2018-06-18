@@ -34,11 +34,31 @@
 }
 
 .more-icon-size{
-        font-size: 2em;
-        margin-left: 85%;
+        font-size: 2em;     
+        /* margin-left: 88%; */
 }
 
 mat-card{
     border-radius: 5%;
     padding:0%;
+}
+.mat-btn{
+    padding:0px;
+    max-width: 60px !important;
+    margin-left:75%;
+   
+}
+
+
+/deep/ .mat-button-focus-overlay {
+    background-color:transparent !important;
+}
+
+
+.margin-left-right-3{
+    /* margin-left: 2%;
+    margin-right:2%;
+    margin-top:2%;
+    margin-bottom: 2%; */
+    margin: 2%;
 }

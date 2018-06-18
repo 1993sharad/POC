@@ -25,9 +25,10 @@ export class FilterProductService {
         };
     }
     getFilters(): Observable<any> {
-        let appName = URLS.appName;
-        let baseUrl = URLS.filterUrl
-        let url = baseUrl + appName + "*&pretty";
+        // let appName = URLS.appName;
+        // let baseUrl = URLS.filterUrl
+        // let url = baseUrl + appName + "*&pretty";
+        let url = URLS.filterUrl;
         return this.http.get(url)
             .pipe(
             // tap(_ => console.log('Customer List Fetched for Add Project Page', _)),

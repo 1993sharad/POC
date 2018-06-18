@@ -25,9 +25,10 @@ export class AppHeaderService {
     }
 
     getHeaderData(): Observable<any> {
-        let appName = URLS.appName;
-        let baseUrl = URLS.filterUrl
-        let url = baseUrl + appName + "*&pretty";
+       // let appName = URLS.appName;
+       // let baseUrl = URLS.filterUrl
+       // let url = baseUrl + appName + "*&pretty";
+        let url = URLS.filterUrl;
 
         return this.http.get(url)
             .pipe(

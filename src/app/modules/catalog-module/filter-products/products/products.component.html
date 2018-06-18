@@ -1,23 +1,29 @@
  {{filtersName}}
- 
-<div class="row max-width">
-    <mat-card [ngStyle]="{'margin-top':i<2 ? '2%' : '0px' }" class="col-sm-3 padding-left-right-0 max-width-30" *ngFor="let product of productArray; let i = index">
 
-        <div class="padding-top-0">
-            <div class="icon-more more-icon-size" (click)="more(product._id)"></div>
+
+<div class="row max-width">
+    <mat-card style="max-width:29%" class="col-sm-4 margin-left-right-3 row" *ngFor="let product of productArray; let i = index">
+        <div class="padding-top-0 ">
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu" class="mat-btn">
+                    <div class="icon-more more-icon-size">
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="more(product._id)">View</button>
+                            <button mat-menu-item>Edit</button>
+                        </mat-menu>
+                    </div>
+                </button>
+            </div>
             <div>
                 <img class="image-margin-left-38" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
                     alt="rose image" height="50" width="80">
             </div>
-
         </div>
         <div class="margin-left-8">
-            <b>{{product._source.ProductTitle}}</b>
+            <b>{{product._source.productTitle}}</b>
         </div>
         <div class="margin-left-8 margin-top-5">
-            {{product._source.ProductDesc}}
+            {{product._source.productDesc}}
         </div>
-
     </mat-card>
-
 </div>

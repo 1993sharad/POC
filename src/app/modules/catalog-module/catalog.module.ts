@@ -5,7 +5,7 @@ import {FilterComponent } from '../catalog-module/filter-products/filter/filter.
 import {ProductsComponent } from '../catalog-module/filter-products/products/products.component';
 import { MatCardModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
-import {MatIconModule,MatButtonModule} from '@angular/material';
+import {MatIconModule,MatButtonModule,MatMenuModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
+    MatMenuModule,
     FormsModule,
     CommonModule,
     MatCardModule,
