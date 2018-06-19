@@ -22,8 +22,11 @@ export class AppHeaderComponent implements OnInit {
   getHeaderDetail() {
     this.appHeaderService.getHeaderData()
     .subscribe(headerData=>{
-     this.pName = headerData.hits.hits[0]._source.appTitleName;
-     this.pDesc = headerData.hits.hits[0]._source.appTitleDesc;
+      if(headerData){
+        this.pName = headerData.hits.hits[0]._source.appTitleName;
+        this.pDesc = headerData.hits.hits[0]._source.appTitleDesc;
+      }
+    
     },
     err=>{})
 
