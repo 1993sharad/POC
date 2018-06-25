@@ -1,3 +1,67 @@
-<p>
-  view-product works!
-</p>
+<div class="margin-left-right-6">
+
+  <!-- <div class="col-sm-12 padding-0">
+    <mat-card class="name-format">{{product._source.productTitle}}
+      <div class="float-right">
+        <button mat-button>
+          <a routerLink="/project">Back</a>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-sm-6">
+    <div class="icon-alert-blank float-right custom-icon-dropdown"></div>
+  </div> -->
+  <div class="col-sm-12 row margin-top-4">
+    <div class="custom-product-name col-sm-10">{{product._source.productTitle}}</div>
+    <!-- <button mat-button class="col-sm-2 ">
+      <a routerLink="/project">Back</a>
+    </button> -->
+  </div>
+  <hr class="margin-0">
+  <div class="col-sm-12 row margin-0 margin-top-4">
+    <div class="col-sm-3">
+      <view-review [socialData]=socialData></view-review>
+    </div>
+    <div class="col-sm-6">
+      <div [innerHTML]="product._source.productDesc"></div>
+      <div [innerHTML]="product._source.productSummary" class="margin-top-4"></div>
+    </div>
+
+    <div class="col-sm-3" [hidden]="!(product._source.contactsList.length>0)">
+      <div class="col-sm-12 row padding-0 margin-0 color-white">
+        <div class="icon-mail col-sm-1"></div>
+        <div class="col-sm-8 custom-contact-name">CONTACTS</div>
+      </div>
+      <hr class="margin-0">
+      <div class="padding-0 padding-top-3 color-white">
+
+        <div *ngFor="let user of product._source.contactsList; let i = index" class=" col-sm-12 row margin-0 custom-contact padding-0">
+          <div class="col-sm-5 padding-0 center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8l5uTTOnebB3KcMlSOw-L7nY5KO2hFTTtU4pM8V7Kez1UC1Ha" class="custom-mat">
+          </div>
+          <div class="col-sm-7 padding-0">
+            <div>
+              <b>{{ capitalizeFirstLetter(user.role) }}</b>
+            </div>
+            <div>{{user.name}}</div>
+            <div class="contact-font">
+              <span>
+                <a>Directory</a> | </span>
+              <span>
+                <a>Email</a> | </span>
+              <span>
+                <a>Chat</a>
+              </span>
+            </div>
+          </div>
+          <hr style="width:100%;margin-top:6%" [hidden]="!(i<product._source.contactsList.length-1)">
+        </div>
+
+      </div>
+      <!-- here chane to mat-card -->
+    </div>
+  </div>
+
+
+</div>

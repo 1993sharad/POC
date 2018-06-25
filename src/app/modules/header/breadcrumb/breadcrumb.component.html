@@ -1,0 +1,21 @@
+<div class="breadcrumb-container" [hidden]="!breadcrumb.length>0">
+  <span (click)="navigateTo(fixedMenu.name)" class="" >
+    <a [routerLink]="fixedMenu.url" class="color-grey menu">{{fixedMenu.name}}</a>
+  </span>
+  <!-- <span class="icon-chevron-right"></span> -->
+  <span *ngFor="let menu of this.breadcrumb; let i =index; let l =last; let f = first;">
+    <span class="">
+        <span class="icon-chevron-right font-10 margin-left-right"></span>
+      <span [ngClass]="{'disable-last':(f)?(l?true:false):(l?true:false)}" (click)="navigateTo(i)">
+        <a [routerLink]="menu.url" class="color-grey menu ">{{menu.name}}</a>
+      </span>
+     
+    </span>
+
+    <!-- {{f}} {{l}} -->
+  </span>
+
+</div>
+
+
+<!-- [ngClass]="{'disable-last':l} -->

@@ -1,0 +1,93 @@
+.container{
+  
+    margin: 2%;
+}
+.padding-0{
+    padding: 0px;  
+}
+.margin-0{
+    margin:0px;
+}
+
+/deep/ .mat-button-focus-overlay {
+    background-color:transparent !important;
+}
+.name-format{
+    font-size: 22px;
+    display: block;
+    color: #333;
+    border: 0;
+    padding: 10px !important;
+   margin-left: 20%;
+   margin-right: 20%;
+   margin-top:2%;
+   border-radius: 15%;
+}
+.margin-left-right-2{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.float-right{
+    float: right;
+}
+
+  .custom-icon-dropdown{
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -moz-transform: rotate(180deg);   /* Firefox */
+    -ms-transform: rotate(180deg);   /* IE 9 */
+    -o-transform: rotate(180deg);   /* Opera */
+    transform: rotate(180deg);
+    line-height: 0.9em;
+    color: #049fd9!important;
+}
+
+.custom-mat{
+    border-radius: 100% ;
+    width: 50%;
+    height:100%;
+}
+.custom-contact{
+    margin-top: 3%;
+}
+.padding-top-3{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.center{
+    text-align: center;
+}
+
+.margin-0{
+    margin: 0px;
+}
+.contact-font{
+    font-size: 85%;
+}
+.custom-contact-name{
+    font-weight: 400;
+    font-size: 15px;
+    color: #333;
+}
+.margin-top-4{
+    margin-top:2%;
+}
+.margin-left-right-6{
+    margin-left: 6%;
+    margin-right: 6%;
+}
+.custom-product-name{
+    display: block;
+    width: 100%;
+    padding: 0px;
+    /* margin-top: 4%; */
+    font-size: 22px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+}
+.margin-top{
+    margin-top: 4%;
+}
+.color-white{
+    background-color: white;
+}

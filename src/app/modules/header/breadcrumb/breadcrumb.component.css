@@ -1,0 +1,25 @@
+.breadcrumb-container{
+    background-color: white;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+.disable-last{
+    opacity: 0.5;
+    pointer-events: none;
+}
+.color-grey{
+color: grey !important;
+font-size: smaller
+}
+.font-10{
+    font-size: 8px !important;
+}
+.margin-left-right{
+    margin-right: 4px;
+    margin-left: 7px;
+}
+
+.menu:hover {
+    text-decoration: underline;
+}

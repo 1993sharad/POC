@@ -1,6 +1,5 @@
  {{filtersName}}
-
-
+ length  {{productArray.length}}
 <div class="row max-width">
     <mat-card style="max-width:29%" class="col-sm-4 margin-left-right-3 row" *ngFor="let product of productArray; let i = index">
         <div class="padding-top-0 ">
@@ -8,7 +7,7 @@
                 <button mat-button [matMenuTriggerFor]="menu" class="mat-btn">
                     <div class="icon-more more-icon-size">
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item (click)="more(product._id)">View</button>
+                            <button mat-menu-item (click)="more(product,i)">View</button>
                             <button mat-menu-item>Edit</button>
                         </mat-menu>
                     </div>

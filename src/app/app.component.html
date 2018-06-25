@@ -1,5 +1,6 @@
 <div class="">
-  <app-app-header  [headerData]="headerDetail" [styless]="styleData"></app-app-header>
+  <app-app-header [headerData]="headerDetail" [styless]="styleData"></app-app-header>
+  <app-breadcrumb [leftSideFixedMenu]="{name:'Home',url:'/home'}" [menu]="[ ]"></app-breadcrumb>
   <div>
     <router-outlet></router-outlet>
   </div>

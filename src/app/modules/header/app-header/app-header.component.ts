@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitter, Input } from '@angular/core';
 import { AppHeaderService } from './app-header.service';
+import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component";
+
 @Component({
   selector: 'app-app-header',
   templateUrl: './app-header.component.html',
@@ -15,20 +17,20 @@ export class AppHeaderComponent implements OnInit {
   pName: string = "";
   pDesc: string = "";
   ngOnInit() {
-    this.removeUnderLine();
+    // this.removeUnderLine();
     this.getHeaderDetail();
   }
 
   getHeaderDetail() {
     this.appHeaderService.getHeaderData()
-    .subscribe(headerData=>{
-      if(headerData){
-        this.pName = headerData.hits.hits[0]._source.appTitleName;
-        this.pDesc = headerData.hits.hits[0]._source.appTitleDesc;
-      }
-    
-    },
-    err=>{})
+      .subscribe(headerData => {
+        if (headerData) {
+          this.pName = headerData.hits.hits[0]._source.appTitleName;
+          this.pDesc = headerData.hits.hits[0]._source.appTitleDesc;
+        }
+
+      },
+      err => { })
 
   }
   removeUnderLine() {
@@ -40,13 +42,20 @@ export class AppHeaderComponent implements OnInit {
     }
   }
 
-  underLine(linkNumber: number) {
-    for (let i = 0; i < this.underLineData.length; i++) {
-      if (linkNumber === i) {
-        this.underLineData[i] = true;
-        continue;
-      }
-      this.underLineData[i] = false;
+  underLine(linkNumber: number, menuName: string): void {
+    let breadcrumbObj = BreadcrumbComponent.getInstance();
+    if (linkNumber !== 0) {
+      breadcrumbObj.flushMenu();
+      breadcrumbObj.addMenu({ name: menuName, url: '/project' });
     }
+    else
+      breadcrumbObj.flushMenu();
+    // for (let i = 0; i < this.underLineData.length; i++) {
+    //   if (linkNumber === i) {
+    //     this.underLineData[i] = true;
+    //     continue;
+    //   }
+    //   this.underLineData[i] = false;
+    // }
   }
 }

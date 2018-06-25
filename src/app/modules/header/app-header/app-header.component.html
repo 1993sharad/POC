@@ -25,9 +25,10 @@
   <div>
     <span *ngFor="let nav of headerData.headerNavigation; index as i" [ngStyle]="{'margin-left':i === 0? '9%' : '5%' }">
       <b>
-        <a [routerLink]=nav.url [ngClass]="{'active':underLineData[i]}" (click)="underLine(i)" [ngStyle]="styless.tab"> {{nav.name}} </a>
+        <!-- <a [routerLink]=nav.url [ngClass]="{'active':underLineData[i]}" (click)="underLine(i)" [ngStyle]="styless.tab"> {{nav.name}} </a> -->
+        <a [routerLink]=nav.url [routerLinkActive]="'active'" [ngStyle]="styless.tab" (click)="underLine(i,nav.name)"> {{nav.name}} </a>
+
       </b>
     </span>
   </div>
-
 </header>

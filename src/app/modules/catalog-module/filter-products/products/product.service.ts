@@ -27,7 +27,7 @@ export class ProductService {
     getProducts(searchName: string): Observable<any> {
         let baseUrl = URLS.filterProductUrl;
         if (searchName === "" || searchName == undefined)
-            searchName = "*&pretty";
+            searchName = "*&pretty&from=0&size=10000";
         baseUrl += searchName;
 
         return this.http.get(baseUrl)

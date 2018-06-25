@@ -4,6 +4,7 @@ import { AppHeaderComponent } from './app-header/app-header.component'
 import { RouterModule} from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 @NgModule({
@@ -13,9 +14,9 @@ import { MatCardModule } from '@angular/material';
     RouterModule,
     MatCardModule
   ],
-  declarations: [AppHeaderComponent],
+  declarations: [AppHeaderComponent, BreadcrumbComponent],
 
-exports:[AppHeaderComponent]
+exports:[AppHeaderComponent,BreadcrumbComponent]
 
 })
 export class HeaderModule { }

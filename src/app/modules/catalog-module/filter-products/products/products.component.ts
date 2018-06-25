@@ -3,6 +3,9 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { EventEmitter } from '@angular/core';
 import { Product } from '../product-name.model';
 import { ProductService } from './product.service';
+import { ModuleService } from "../../../module-service"
+import { Router } from "@angular/router"
+import { BreadcrumbComponent } from "../../../header/breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-products',
@@ -10,7 +13,8 @@ import { ProductService } from './product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit, OnChanges {
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private moduleService: ModuleService,
+    private router: Router) { }
 
   @Input() products: Product;
   productArray: any[] = [];
@@ -74,10 +78,12 @@ export class ProductsComponent implements OnInit, OnChanges {
     }
   }
 
-  more(productID: string): void {
-    alert(productID);
+  more(product: string, productNo: number): void {
+    BreadcrumbComponent.getInstance().addMenu({ name: this.productArray[productNo]._source.productTitle, url: '/project' });
+    this.moduleService.setProject(product);
+    this.router.navigate(["viewProject"]);
   }
-  
+
 }
 
 interface SearchProductType {

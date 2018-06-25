@@ -16,8 +16,8 @@ export class AppComponent {
       headerHeading: "SPADE Portal Home",
       headerNavigation: [{ name: "Home", url: "/home" },
       { name: "Product Catalog", url: "/project" },
-      { name: "Training", url: "" },
-      { name: "Search", url: "" },
+      { name: "Training", url: "/training" },
+      { name: "Search", url: "/search" },
       ]
     };
 
@@ -28,7 +28,7 @@ export class AppComponent {
       },
       'title': { '': '' },
       'aboutHeader': { 'color': '' },
-      'height': { 'height': '12vh' }
+      'height': { 'height': '10vh' }
     }
 
   }

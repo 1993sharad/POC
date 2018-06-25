@@ -6,6 +6,7 @@ import { RouterModule} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { HeaderModule } from './modules/header/header.module'
 import {CatalogModule } from '../app/modules/catalog-module/catalog.module';
+import {ProductDetailModule} from "../app/modules/product-detail/product-detail.module";
 
 @NgModule({
   declarations: [
@@ -13,9 +14,11 @@ import {CatalogModule } from '../app/modules/catalog-module/catalog.module';
     HomeComponent   
   ],
   
-  imports: [CatalogModule,
+  imports: [
     BrowserModule,
+    CatalogModule,
     HeaderModule,
+    ProductDetailModule,
     RouterModule.forRoot(routes, {useHash: false})
   ],
   providers: [],
