@@ -1,10 +1,9 @@
- {{filtersName}}
- length  {{productArray.length}}
+ {{filtersName}} length {{productArray.length}}
 <div class="row max-width">
     <mat-card style="max-width:29%" class="col-sm-4 margin-left-right-3 row" *ngFor="let product of productArray; let i = index">
-        <div class="padding-top-0 ">
-            <div>
-                <button mat-button [matMenuTriggerFor]="menu" class="mat-btn">
+        <div class="padding-top-0 col-sm-12 row padding-0 margin-0 color-grey">
+            <div class="col-sm-12 padding-0">
+                <button mat-button [matMenuTriggerFor]="menu" class="padding-0" style="float:right">
                     <div class="icon-more more-icon-size">
                         <mat-menu #menu="matMenu">
                             <button mat-menu-item (click)="more(product,i)">View</button>
@@ -13,8 +12,8 @@
                     </div>
                 </button>
             </div>
-            <div>
-                <img class="image-margin-left-38" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            <div class="col-sm-12 padding-0">
+                <img class="image-margin-left-38" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png"
                     alt="rose image" height="50" width="80">
             </div>
         </div>

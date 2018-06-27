@@ -1,11 +1,42 @@
-<div class="word-wrap">
+<!-- <div class="word-wrap">
   <div class="imgContainer col-sm-12 row padding-0">
+
+      <div class="icon-mail icon-pos"></div>
     <img [src]="temImage" alt="ProductImage" class="img margin-left">
-    <div class="icon-mail icon-pos"></div>
+    
   </div>
 
   <div class="col-sm-12 row padding-0">
     <div>
+      <a target="_blank" href="https://www.google.com/">
+        <button class="btn btn--small button-size launchButton padding-0">Launch</button>
+      </a>
+    </div>
+  </div>
+</div> -->
+
+<div class="word-wrap">
+  <div class="imgContainer col-sm-12 row padding-0">
+
+    <div class=" col-sm-12 icon-pos" (click)="matIcon()">
+      <mat-icon id="matId">favorite_border</mat-icon>
+    </div>
+
+    <div class="col-sm-12">
+      <img [src]="temImage" alt="ProductImage" class="img">
+    </div>
+
+  </div>
+
+  <div class="col-sm-12 row padding-0">
+    <div class="col-sm-12 row padding-0">
+      <div class="margin-left">
+        <a target="_blank" href="https://www.google.com/">
+          <button class="btn btn--small button-size followButton padding-0">Follow</button>
+        </a>
+      </div>
+    </div>
+    <div col-sm-12 row padding-0>
       <a target="_blank" href="https://www.google.com/">
         <button class="btn btn--small button-size launchButton padding-0">Launch</button>
       </a>

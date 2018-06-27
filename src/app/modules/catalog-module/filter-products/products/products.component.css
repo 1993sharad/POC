@@ -17,10 +17,11 @@
 
 .padding-left-right-0{
     padding-left: 0px;
-    padding-right: 0px;
-   
+    padding-right: 0px; 
 }
-
+.padding-right{
+    padding-right:6%;
+}
 .padding-top-0{
     padding-top: 0px;
 }
@@ -61,4 +62,17 @@ mat-card{
     margin-top:2%;
     margin-bottom: 2%; */
     margin: 2%;
+}
+.padding-0{
+    padding: 0px;
+}
+.margin-0{
+    margin: 0px;
+}
+.mat-button{
+    min-width: unset;
+    padding-right:6%;
+}
+.color-grey{
+    background-color: #dfdfdf6e
 }

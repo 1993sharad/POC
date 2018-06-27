@@ -18,6 +18,15 @@ export class ReviewComponent implements OnInit {
     // for testing
     this.temImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8l5uTTOnebB3KcMlSOw-L7nY5KO2hFTTtU4pM8V7Kez1UC1Ha"
   }
+  matIcon(): void {
+    let text = document.getElementById("matId").innerText;
+    if (text === "favorite_border")
+      text = "favorite";
+    else
+      text = "favorite_border";
+    document.getElementById("matId").innerHTML = text;
+
+  }
 
 }
 
