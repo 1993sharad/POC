@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit, OnChanges {
 
   @Input() products: Product;
   productArray: any[] = [];
+  imageUrl: string = "https://fdk-author3-stage.cisco.com/c/dam/en/us/support/web/images/caas/";
 
   ngOnInit() {
   }

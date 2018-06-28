@@ -1,4 +1,4 @@
- {{filtersName}} length {{productArray.length}}
+ {{filtersName}} length {{productArray.length}} 
 <div class="row max-width">
     <mat-card style="max-width:29%" class="col-sm-4 margin-left-right-3 row" *ngFor="let product of productArray; let i = index">
         <div class="padding-top-0 col-sm-12 row padding-0 margin-0 color-grey">
@@ -13,8 +13,12 @@
                 </button>
             </div>
             <div class="col-sm-12 padding-0">
-                <img class="image-margin-left-38" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png"
-                    alt="rose image" height="50" width="80">
+                <!-- <img *ngIf="{{product._source.imageUrl}}" class="image-margin-left-38" src={{imageUrl}}{{product._source.imageUrl}} alt="rose image" height="50" width="80"> -->
+                <!-- <img *ngIf="{{product._source.imageUrl}} ==""?true:false" class="image-margin-left-38" src={{imageUrl}}{{product._source.imageUrl}} alt="rose image" height="50" width="80"> -->
+
+                <img  class="image-margin-left-38" src="{{ product._source.imageUrl=='' ?  'assets/caas.jpg' : imageUrl+product._source.imageUrl}}" alt="rose image" height="50" width="80">
+
+
             </div>
         </div>
         <div class="margin-left-8">
