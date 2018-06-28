@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModuleService } from "../../module-service";
 import { Product } from "./product-model";
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-view-product',
@@ -10,17 +10,21 @@ import { Product } from "./product-model";
 })
 export class ViewProductComponent implements OnInit {
 
-  constructor(private moduleService: ModuleService) { }
+  constructor(private moduleService: ModuleService, private sanitizer: DomSanitizer) { }
 
   product: Product;
   socialData: SocialModel;
+  ImageUrl: string = "http://wwwin.cisco.com/dir/photo/std/";
+  directoryUrl: string = "http://wwwin-tools.cisco.com/dir/details/";
 
   ngOnInit() {
     console.log(JSON.stringify(this.moduleService.getProject()));
     this.product = this.moduleService.getProject();
     this.fetchSocialData();
   }
-
+  sanitize(url: string) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
   capitalizeFirstLetter(authorName: string): string {
     return authorName.charAt(0).toUpperCase() + authorName.slice(1);
   }

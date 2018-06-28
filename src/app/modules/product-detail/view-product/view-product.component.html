@@ -38,7 +38,7 @@
 
         <div *ngFor="let user of product._source.contactsList; let i = index" class=" col-sm-12 row margin-0 custom-contact padding-0">
           <div class="col-sm-5 padding-0 center">
-            <img src="http://wwwin.cisco.com/dir/photo/std/shkumarj" class="custom-mat">
+            <img src="{{ImageUrl}}{{user.cecId}}" class="custom-mat">
           </div>
           <div class="col-sm-7 padding-0">
             <div>
@@ -47,11 +47,13 @@
             <div>{{user.name}}</div>
             <div class="contact-font">
               <span>
-                <a>Directory</a> | </span>
+                <a href="{{directoryUrl}}{{user.cecId}}" target="_blank">Directory</a> | </span>
               <span>
-                <a>Email</a> | </span>
+                <a href="mailto:{{user.cecId}}@cisco.com">Email</a> | </span>
               <span>
-                <a>Chat</a>
+                <!-- <a href="xmpp:{{xxx}}@cisco.com" >Chat</a> -->
+                <a [href]="sanitize('xmpp:'+user.cecId+'@cisco.com')">Chat</a>
+
               </span>
             </div>
           </div>
@@ -62,6 +64,4 @@
       <!-- here chane to mat-card -->
     </div>
   </div>
-
-
 </div>
